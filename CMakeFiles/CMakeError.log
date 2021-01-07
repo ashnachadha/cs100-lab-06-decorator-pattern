@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_5ee95/fast 
+/opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_5ee95.dir/build.make CMakeFiles/cmTC_5ee95.dir/build
+gmake[1]: Entering directory '/home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ee95.dir/CheckSymbolExists.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc    -o CMakeFiles/cmTC_5ee95.dir/CheckSymbolExists.c.o   -c /home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5ee95
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_5ee95.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc      -rdynamic CMakeFiles/cmTC_5ee95.dir/CheckSymbolExists.c.o  -o cmTC_5ee95 
+CMakeFiles/cmTC_5ee95.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5ee95.dir/build.make:86: recipe for target 'cmTC_5ee95' failed
+gmake[1]: *** [cmTC_5ee95] Error 1
+gmake[1]: Leaving directory '/home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_5ee95/fast' failed
+gmake: *** [cmTC_5ee95/fast] Error 2
+
+File /home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/opt/rh/devtoolset-6/root/usr/bin/gmake cmTC_57992/fast 
+/opt/rh/devtoolset-6/root/usr/bin/gmake -f CMakeFiles/cmTC_57992.dir/build.make CMakeFiles/cmTC_57992.dir/build
+gmake[1]: Entering directory '/home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_57992.dir/CheckFunctionExists.c.o
+/opt/rh/devtoolset-6/root/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_57992.dir/CheckFunctionExists.c.o   -c /usr/share/cmake3/Modules/CheckFunctionExists.c
+Linking C executable cmTC_57992
+/usr/bin/cmake3 -E cmake_link_script CMakeFiles/cmTC_57992.dir/link.txt --verbose=1
+/opt/rh/devtoolset-6/root/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_57992.dir/CheckFunctionExists.c.o  -o cmTC_57992 -lpthreads 
+/opt/rh/devtoolset-6/root/usr/libexec/gcc/x86_64-redhat-linux/6.3.1/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_57992.dir/build.make:86: recipe for target 'cmTC_57992' failed
+gmake[1]: *** [cmTC_57992] Error 1
+gmake[1]: Leaving directory '/home/csmajs/achad006/lab-06-decorator-pattern-coolkidz/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_57992/fast' failed
+gmake: *** [cmTC_57992/fast] Error 2
+
+
